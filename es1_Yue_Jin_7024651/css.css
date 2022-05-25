@@ -1,0 +1,350 @@
+/* START REGOLE GENERALI */
+*{
+    padding: 0;
+    margin: 0;
+}
+
+ul{
+    list-style-type: none;
+}
+li{
+    float: left;
+    padding: 0 18px;
+}
+
+button{
+    height: 32px;
+    width: 32px;
+    border: none;
+}
+
+img{
+    border:1px solid black;
+}
+
+/* END REGOLE GENERALI */
+
+
+
+/* START HEADER */
+header{
+    height: 80px;
+}
+.headerbar{
+    position: fixed;
+    display: flex;
+    width: 100%;
+    height: 81px;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid lightgray;
+    clear: both;
+    background-color: white;
+    z-index: 9998;
+}
+
+.toggle_menu{
+    padding-left: 170px;
+}
+.headerbar #toggle{
+    display: none;
+}
+.headerbar label{
+    display: block;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+}
+.headerbar label .hamburger_container{
+    position: relative;
+    top: 6px;
+    left: 4px;
+    width: 32px;
+    height: 32px;
+}
+.headerbar label .hamburger_container span{
+    position: relative;
+    display: block;
+}
+.headerbar label .hamburger_container span, .headerbar label .hamburger_container span:before,
+.headerbar label .hamburger_container span:after{
+    height: 2px;
+    background-color: black;
+    width: 100%;
+    border-radius: 2px;
+    left: -4px;
+    bottom: -2px;
+}
+.headerbar label .hamburger_container span:before, .headerbar label .hamburger_container span:after{
+    content: "";
+    position: absolute;
+    width: 50%;
+    left: 0;
+    top: 8px;
+}
+.headerbar label .hamburger_container span:after{
+    top: 16px;
+    width: 100%;
+}
+.headerbar #toggle:checked + label .hamburger_container span{
+    background-color: transparent;
+}
+.headerbar #toggle:checked + label .hamburger_container span:before{
+    transform: rotate(45deg) translate(-1px, 0);
+    width: 100%;
+}
+.headerbar #toggle:checked + label .hamburger_container span:after{
+    transform: rotate(-45deg) translate(6px, -7px);
+}
+.headerbar label:active{
+    background-color: red;
+    border-radius: 3px;
+    border: 2px solid black;
+}
+
+.headerbar .title{
+    margin: 0 auto;
+}
+.headerbar .title a{
+    font-size: 55px;
+    text-decoration: none;
+    color: red;
+}
+.headerbar .title a:active{
+    border: 1px solid black;
+    border-radius: 8px;
+}
+
+.headerbar .ricerca{
+    width: 9%;
+    padding-right: 150px;
+}
+.headerbar .ricerca a{
+    position: relative;
+    top: -10px;
+    font-size: 12px;
+    text-decoration: none;
+    border-bottom: 1px dashed black;
+    color: black;
+}
+.headerbar .ricerca a:hover{
+    color: red;
+}
+.headerbar .ricerca input{
+    position: fixed;
+    background-color: white;
+    z-index: 9999;
+    height: 30px;
+    width: 260px;
+    right: 200px;
+    border: none;
+    border-bottom: 1px solid black;
+    transform: scaleY(0);
+}
+
+.headerbar .ricerca button:active ~ input{
+    transform: scaleY(1);
+}
+.headerbar .ricerca button{
+    position: relative;
+    left: 20px;
+    background-image: url("images/ricerca.jpg");
+    background-position-y: 5px;
+    background-position-x: -1px;
+    background-size: 32px;
+    background-repeat: no-repeat;
+    border-radius: 30%;
+}
+.headerbar .ricerca button:active{
+    border: 2px solid black;
+}
+
+
+/* END HEADER */
+
+/* HIDDEN MENU */
+.hidden{
+    width: 100%;
+    min-height: 80%;
+    padding-top: 30px;
+    border-bottom: 1px solid lightgray;
+    border-top: 1px solid lightgray;
+    position: fixed;
+    z-index: 9997;
+    background-color: white;
+    margin: 0 auto;
+    left: 0;
+    top: 81px;
+    transform: scaleY(0);
+}
+.hidden .position{
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+    left: 50px;
+}
+.hidden ul{
+    float: left;
+    width: 15%;
+}
+.hidden ul a{
+    text-decoration: none;
+    color: black;
+}
+.hidden ul a li.title, .hidden ul a li.title1{
+    font-weight: 700;
+    font-size: 15px;
+}
+.hidden ul a li.title1{
+    padding-top: 15px;
+}
+.hidden ul a li{
+    padding-bottom: 15px;
+    font-size: 12px;
+}
+.hidden ul li{
+    float: none;
+}
+.headerbar #toggle:checked ~ .hidden{
+    transform: scaleY(1);
+}
+
+
+/* START NAVBAR RULES */
+.navbar{
+    border-bottom: 1px solid lightgray;
+    clear: both;
+}
+
+.container{
+    height: 20px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 12px 0;
+    font-size: 14px;
+    font-weight: 800;
+}
+.container ul{
+    width: 80%;
+    margin: 0 auto;
+}
+.navbar a{
+    text-decoration: none;
+    color: black;
+    padding-bottom: 8px;
+}
+.navbar a:hover{
+    color: #708090;
+    border-bottom: 3px solid deeppink;
+}
+/* END NAVBAR RULES */
+
+
+/* START FOOTER RULES */
+footer{
+    background-color: darkgray;
+    padding-top: 50px;
+    padding-bottom: 10px;
+}
+footer a{
+    text-decoration: none;
+    color: black;
+}
+.footerbar li {
+    float: none;
+}
+.footerbar{
+    display: flex;
+    position: relative;
+    width: 80%;
+    left: 170px;
+}
+.footer-item1{
+    width: 40%;
+}
+.footer-item1 p{
+    font-size: 30px;
+    font-weight: 800;
+    position: relative;
+    top: -20px;
+}
+.footer-item1 p a{
+    color: red;
+}
+.footer-item1 .circle{
+    border-radius: 100%;
+    margin-right: 10px;
+}
+
+.footer-item2{
+    display: flex;
+    flex-wrap: wrap;
+    width: 60%;
+}
+.item2-first{
+    width: 100%;
+    font-weight: 800;
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 5px;
+    font-size: 11px;
+}
+.item2-first p {
+    float: right;
+    position: relative;
+    left: -20px;
+}
+.item2-first span{
+    position: relative;
+    display: block;
+    float: right;
+    left: 100px;
+    top: 7px;
+}
+.item2-first span, .item2-first span:after{
+    height: 1px;
+    background-color: black;
+    width: 10px;
+    border-radius: 2px;
+}
+.item2-first span{
+    transform: rotate(45deg);
+}
+.item2-first span:after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: rotate(-90deg);
+    left: -5px;
+    top: 5px;
+}
+.footer-item2 ul{
+    padding-right: 60px;
+}
+.footer-item2 li{
+    padding: 12px;
+    font-size: 5px;
+}
+.item2-item li.title{
+    font-weight: 800;
+}
+
+.end{
+    width: 70%;
+    position: relative;
+    left: 170px;
+    font-size: 11px;
+}
+.end .first{
+    padding-bottom: 5px;
+}
+.end .first span:nth-child(1){
+    font-weight: 800;
+    color: dimgray;
+    letter-spacing: 1px;
+}
+.end .first span:nth-child(2){
+    font-style: oblique;
+    color: lightslategray;
+}
+
+/* END FOOTER RULES */
